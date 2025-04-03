@@ -87,36 +87,41 @@ tbody tr:hover {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background: linear-gradient(135deg, #ff7b00, #ff3d00);
-  color: white;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Cores dinâmicas */
+.custom-button.blue {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+.custom-button.green {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+}
+
+.custom-button.gray {
+  background: linear-gradient(135deg, #6c757d, #495057);
+  color: white;
+}
+
+/* Efeito hover */
 .custom-button:hover {
-  background: linear-gradient(135deg, #ff3d00, #ff7b00);
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Efeito de clique */
 .custom-button:active {
   transform: scale(0.98);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Botão desativado */
 .custom-button:disabled {
   background: #aaa;
   cursor: not-allowed;
   box-shadow: none;
-}
-
-/* Modo escuro */
-@media (prefers-color-scheme: dark) {
-  .custom-button {
-    background: linear-gradient(135deg, #ff3d00, #ff7b00);
-  }
-
-  .custom-button:hover {
-    background: linear-gradient(135deg, #ff7b00, #ff3d00);
-  }
 }

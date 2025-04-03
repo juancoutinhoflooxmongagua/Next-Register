@@ -15,7 +15,7 @@ export default function Home() {
       <center>
       <Layout title="Clientes" />
       <br></br>
-      <Button>Novo Cliente</Button>
+      <Button cor="blue" className="justify-end">Novo Cliente</Button>
       <div className="p-6">
         <Table clients={clientes} />
       </div>

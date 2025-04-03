@@ -1,7 +1,7 @@
-export default function Button(props) {
+export default function Button({ cor = "blue", className = "", children }) {
     return (
-        <button className="custom-button">
-            {props.children}
+        <button className={`custom-button ${cor} ${className}`}>
+            {children}
         </button>
     );
 }
