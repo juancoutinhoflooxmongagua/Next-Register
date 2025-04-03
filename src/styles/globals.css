@@ -2,126 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🎨 Paleta de cores */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --primary: #007bff;
+  --primary-hover: #0056b3;
+  --border: #ddd;
+  --input-bg: #f9f9f9;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --border: #333;
+    --input-bg: #222;
   }
 }
 
+/* 📌 Estilos Gerais */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* 📋 Tabela */
 .table-container {
   width: 100%;
-  max-width: 1000px; /* Aumentei o tamanho da tabela */
-  margin: 40px auto; /* Mais espaçamento ao redor */
-  overflow-x: auto;
-  border-radius: 12px; /* Bordas mais arredondadas */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+  max-width: 800px; /* Mantive um tamanho bom */
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   background: var(--background);
-  color: var(--foreground);
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  font-size: 18px; /* Aumentei o tamanho da fonte */
+  font-size: 16px;
 }
 
 thead {
-  background: rgba(0, 0, 0, 0.15);
-  font-size: 20px; /* Deixei os títulos maiores */
+  background: rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
 }
 
 th, td {
-  padding: 20px 24px; /* Mais espaço entre o texto e a borda */
+  padding: 12px;
   text-align: left;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--border);
 }
 
 tbody tr:hover {
-  background: rgba(0, 0, 0, 0.07);
-  transition: 0.2s ease-in-out;
+  background: rgba(0, 0, 0, 0.05);
+  transition: 0.2s;
 }
 
-/* Modo escuro */
+/* 📦 Formulário */
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: var(--background);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--foreground);
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px var(--primary-hover);
+}
+
+/* 🔘 Botões */
+button {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  transition: 0.3s;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* 📏 Modo escuro */
 @media (prefers-color-scheme: dark) {
   thead {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
   }
-
   tbody tr:hover {
     background: rgba(255, 255, 255, 0.08);
   }
-
-  th, td {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  }
-}
-
-.custom-button {
-  display: inline-block;
-  padding: 14px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Cores dinâmicas */
-.custom-button.blue {
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  color: white;
-}
-
-.custom-button.green {
-  background: linear-gradient(135deg, #28a745, #1e7e34);
-  color: white;
-}
-
-.custom-button.gray {
-  background: linear-gradient(135deg, #6c757d, #495057);
-  color: white;
-}
-
-/* Efeito hover */
-.custom-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Efeito de clique */
-.custom-button:active {
-  transform: scale(0.98);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Botão desativado */
-.custom-button:disabled {
-  background: #aaa;
-  cursor: not-allowed;
-  box-shadow: none;
 }
