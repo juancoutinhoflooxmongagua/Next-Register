@@ -31,6 +31,10 @@ export default function Home() {
     setShowForm(true);
   };
 
+  const handleDeleteClient = (clientId) => {
+    setClients((prevClients) => prevClients.filter((c) => c.id !== clientId));
+  };
+
   const handleNewClient = () => {
     setSelectedClient(null);
     setShowForm(true);
@@ -38,23 +42,23 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-100 p-6">
+      
       <Layout title="Clientes" />
 
       <div className="w-full max-w-2xl bg-white shadow-md rounded-lg p-4">
         {showForm ? (
-         <Form
-         client={selectedClient || { name: "", age: "" }}
-         onClientChange={handleSaveClient}
-         cancel={() => setShowForm(false)} 
-       />
-       
+          <Form
+            client={selectedClient || { name: "", age: "" }}
+            onClientChange={handleSaveClient}
+            onCancel={() => setShowForm(false)}
+          />
         ) : (
           <>
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold">Clientes</h2>
-              <Button cor="blue" onClick={handleNewClient}>Novo Cliente</Button>
+              <Button cor="blue" onClick={handleNewClient}>Novo Cliente</Button><br></br><br></br>
             </div>
-            <Table clients={clients} onEdit={handleEditClient} />
+            <Table clients={clients} onEdit={handleEditClient} onDelete={handleDeleteClient} />
           </>
         )}
       </div>

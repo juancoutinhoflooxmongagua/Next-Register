@@ -6,7 +6,7 @@ export default class Client {
     constructor(nome, idade, id = null) {
         this.#nome = nome;
         this.#idade = idade;
-        this.#id = id || Math.random().toString(36).substr(2, 9); // Gera um ID único se não for passado
+        this.#id = id || Math.random().toString(36).substr(2, 9); 
     }
 
     static null(){

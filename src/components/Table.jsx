@@ -1,24 +1,28 @@
-export default function Table({ clients }) {
+export default function Table({ clients, onEdit, onDelete }) {
     return (
-        <div className="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Idade</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {clients.map((client, index) => (
-                        <tr key={client.id || index}>
-                            <td>{client.id}</td>
-                            <td>{client.nome}</td>
-                            <td>{client.idade}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {clients.map((client) => (
+            <tr key={client.id}>
+              <td>{client.id}</td>
+              <td>{client.nome}</td>
+              <td>{client.idade}</td>
+              <td>
+                <button onClick={() => onEdit(client)}>✏️ Editar</button>
+                <button onClick={() => onDelete(client.id)}>🗑️ Excluir</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     );
-}
+  }
+  

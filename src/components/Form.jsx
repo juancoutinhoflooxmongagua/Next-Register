@@ -5,8 +5,8 @@ import Input from "./Input";
 
 export default function Form({ client, clientChange, cancel }) {
     const id = client?.id;
-    const [name, setname] = useState(client?.name ?? '');
-    const [age, setage] = useState(client?.age ?? 0);
+    const [nome, setNome] = useState(client?.nome ?? '');
+    const [idade, setIdade] = useState(client?.idade ?? 0);
 
     return (
         <div>
@@ -18,20 +18,20 @@ export default function Form({ client, clientChange, cancel }) {
                 />
             )}
             <Input
-                texto="name"
-                valor={name}
-                valorMudou={setname}
+                texto="Nome"
+                valor={nome}
+                valorMudou={setNome}
             />
             <Input
-                texto="age"
+                texto="Idade"
                 tipo="number"
-                valor={age}
-                valorMudou={setage}
+                valor={idade}
+                valorMudou={setIdade}
             />
             <div>
                 <Button onClick={() => {
-                    console.log("Salvando:", { name, age, id });
-                    clientChange?.(new Client(name, +age, id));
+                    console.log("Salvando:", { nome, idade, id });
+                    clientChange?.(new Client(nome, +idade, id));
                 }}>
                     {id ? 'Alterar' : 'Salvar'}
                 </Button>
