@@ -26,3 +26,54 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.table-container {
+  width: 100%;
+  max-width: 1000px; /* Aumentei o tamanho da tabela */
+  margin: 40px auto; /* Mais espaçamento ao redor */
+  overflow-x: auto;
+  border-radius: 12px; /* Bordas mais arredondadas */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--background);
+  color: var(--foreground);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 18px; /* Aumentei o tamanho da fonte */
+}
+
+thead {
+  background: rgba(0, 0, 0, 0.15);
+  font-size: 20px; /* Deixei os títulos maiores */
+  text-transform: uppercase;
+}
+
+th, td {
+  padding: 20px 24px; /* Mais espaço entre o texto e a borda */
+  text-align: left;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+tbody tr:hover {
+  background: rgba(0, 0, 0, 0.07);
+  transition: 0.2s ease-in-out;
+}
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+  thead {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  tbody tr:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  th, td {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+}
