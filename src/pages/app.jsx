@@ -42,11 +42,12 @@ export default function Home() {
 
       <div className="w-full max-w-2xl bg-white shadow-md rounded-lg p-4">
         {showForm ? (
-          <Form
-            client={selectedClient || { name: "", age: "" }}
-            onClientChange={handleSaveClient}
-            onCancel={() => setShowForm(false)}
-          />
+         <Form
+         client={selectedClient || { name: "", age: "" }}
+         onClientChange={handleSaveClient}
+         cancel={() => setShowForm(false)} 
+       />
+       
         ) : (
           <>
             <div className="flex justify-between items-center mb-4">
