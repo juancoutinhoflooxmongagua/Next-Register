@@ -1,18 +1,19 @@
 import Layout from "@/components/Layout";
+import Table from "@/components/Table";
+import Client from "../core/Client"; 
 
 export default function Home() {
+  const clientes = [
+    new Client("Marcos", 34, "2"),
+    new Client("Mano", 23, "1"),
+  ];
+
   return (
     <div>
-        <br></br>
-    <Layout title="Página Inicialkk">
-    </Layout>
+      <br /><br /><br /><br />
+      <Layout title="Clientes" />
       <div className="p-6">
-        <h1 className="text-3xl font-bold text-blue-500">
-          Tailwind está funcionando!
-        </h1>
-        <p className="mt-4 text-gray-700">
-          Esta é a página inicial do seu aplicativo.
-        </p>
+        <Table clients={clientes} />
       </div>
     </div>
   );
