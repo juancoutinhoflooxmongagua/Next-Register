@@ -17,7 +17,7 @@ export default function Form({ client, clientChange, cancel }) {
                     valor={id}
                 />
             )}
-            <Input 
+            <Input
                 texto="name"
                 valor={name}
                 valorMudou={setname}
@@ -29,9 +29,13 @@ export default function Form({ client, clientChange, cancel }) {
                 valorMudou={setage}
             />
             <div>
-                <Button onClick={() => clientChange?.(new Client(name, +age, id))}>
+                <Button onClick={() => {
+                    console.log("Salvando:", { name, age, id });
+                    clientChange?.(new Client(name, +age, id));
+                }}>
                     {id ? 'Alterar' : 'Salvar'}
                 </Button>
+
                 <Button onClick={cancel}>
                     Cancelar
                 </Button>
