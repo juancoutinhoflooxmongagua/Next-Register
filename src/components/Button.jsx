@@ -1,7 +1,7 @@
-export default function Button(props){
+export default function Button(props) {
     return (
-        <button>
+        <button className="custom-button">
             {props.children}
         </button>
-    )
+    );
 }
