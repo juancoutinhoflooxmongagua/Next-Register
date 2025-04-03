@@ -1,3 +1,12 @@
-API_KEY = AIzaSyDN0usHiqOOlSeyYxRTN1dezSVo6woJcSY
-AUTHDOMAIN = nextcrud-45834.firebaseapp.com
-PROJECTID = nextcrud-45834
+import firebase from "firebase"
+import 'firebase/firestore'
+
+if(!firebase.apps.lenght){
+    firebase.initializeApp({
+        apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+        authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTHDOMAIN,
+        projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECTID
+    })
+}
+
+export default firebase
