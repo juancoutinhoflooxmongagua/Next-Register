@@ -23,9 +23,9 @@ export default function Form({ client, clientChange, cancel }) {
                 valorMudou={setname}
             />
             <Input
-                texto="Age"
+                texto="age"
                 tipo="number"
-                valor={Age}
+                valor={age}
                 valorMudou={setage}
             />
             <div>

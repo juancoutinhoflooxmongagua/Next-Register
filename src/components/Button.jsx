@@ -1,6 +1,6 @@
-export default function Button({ cor = "blue", className = "", children }) {
+export default function Button({ cor = "blue", className = "", children, onClick }) {
     return (
-        <button className={`custom-button ${cor} ${className}`}>
+        <button onClick={onClick} className={`custom-button ${cor} ${className}`}>
             {children}
         </button>
     );
